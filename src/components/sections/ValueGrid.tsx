@@ -28,7 +28,7 @@ const values = [
 
 export function ValueGrid() {
   return (
-    <section className="relative isolate bg-surface-deep py-24 sm:py-32">
+    <section className="relative isolate flex min-h-screen snap-start items-center bg-surface-deep py-24 sm:py-32">
       {/* Top gradient blend */}
       <div className="pointer-events-none absolute inset-x-0 top-0 -translate-y-full h-28 bg-gradient-to-b from-transparent to-surface-deep" />
       {/* Bottom gradient blend */}

@@ -15,11 +15,11 @@ export function CTASection() {
   })
 
   const bgScale = useTransform(scrollYProgress, [0, 0.5], [1.05, 1.15])
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [0.1, 0.35])
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [0.25, 0.55])
   const animated = !prefersReducedMotion
 
   return (
-    <section ref={sectionRef} id="cta" className="relative py-32 sm:py-40">
+    <section ref={sectionRef} id="cta" className="relative flex min-h-screen snap-start items-center py-32 sm:py-40">
       {/* Background illustration — breathes into view */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {animated ? (
@@ -37,27 +37,27 @@ export function CTASection() {
             <img
               src="/assets/children-praying.webp"
               alt="Two children kneeling in prayer among wildflowers"
-              className="h-full w-full object-cover opacity-30"
+              className="h-full w-full object-cover opacity-50"
               loading="lazy"
             />
           </ParallaxSection>
         )}
       </div>
 
-      {/* Fades */}
+      {/* Edge fades */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-background to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-t from-background to-transparent" />
 
-      {/* Content */}
+      {/* Content — frosted backdrop for readability */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
         <FadeIn>
-          <h2 className="font-heading text-4xl italic leading-[0.9] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h2 className="text-contrast-strong font-heading text-4xl italic leading-[0.9] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Begin their story today.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <p className="mx-auto mt-8 max-w-xl font-body text-base font-light leading-relaxed text-foreground/60 sm:text-lg">
+          <p className="text-contrast mx-auto mt-8 max-w-xl font-body text-base font-light leading-relaxed text-foreground/60 sm:text-lg">
             Give your children the gift of tradition, faith, and beauty.
             Every treasure is crafted to last a lifetime.
           </p>
