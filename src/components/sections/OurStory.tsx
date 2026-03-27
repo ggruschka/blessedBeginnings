@@ -2,7 +2,6 @@ import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { ParallaxSection } from '@/components/animations/ParallaxSection'
 import { SectionBadge } from '@/components/SectionBadge'
-import { PlaceholderImage } from '@/components/PlaceholderImage'
 
 export function OurStory() {
   return (
@@ -10,10 +9,11 @@ export function OurStory() {
       {/* Background illustration with parallax */}
       <div className="absolute inset-0 z-0">
         <ParallaxSection offset={80} speed={0.2} className="h-full">
-          <PlaceholderImage
-            label="Watercolor — cozy family reading nook"
-            className="h-full w-full rounded-none bg-primary/[0.05] opacity-40"
-            aspectRatio=""
+          <img
+            src="/assets/reading-nook.webp"
+            alt="Cozy watercolor reading nook with rocking chair and books"
+            className="h-full w-full object-cover opacity-40"
+            loading="lazy"
           />
         </ParallaxSection>
       </div>

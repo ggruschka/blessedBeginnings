@@ -10,9 +10,13 @@ export function Footer() {
     <footer className="border-t border-foreground/[0.06] py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
         <div className="flex items-center gap-3">
-          <div className="vintage-frame flex h-8 w-8 items-center justify-center rounded-full">
-            <span className="font-heading text-sm italic text-foreground">B</span>
-          </div>
+          <img
+            src="/assets/logo-48.png"
+            alt="Blessed Beginnings"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
           <p className="font-body text-xs font-light text-foreground/40">
             &copy; 2026 Blessed Beginnings. All rights reserved.
           </p>

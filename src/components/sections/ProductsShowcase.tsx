@@ -1,7 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SectionBadge } from '@/components/SectionBadge'
-import { PlaceholderImage } from '@/components/PlaceholderImage'
 
 const products = [
   {
@@ -9,7 +8,8 @@ const products = [
     description:
       'Enchanting tales filled with Catholic morals, courage, piety, and charity — illustrated in rich, detailed watercolor style reminiscent of classic children\'s literature.',
     cta: 'Browse Books',
-    image: 'Storybook mockup — watercolor cover with saint illustration',
+    image: '/assets/storybook.webp',
+    imageAlt: 'Open watercolor storybook with a boy and lamb illustration',
     reverse: false,
   },
   {
@@ -17,7 +17,8 @@ const products = [
     description:
       'Classic wooden and cloth toys from a bygone toy shop — encouraging imaginative play rooted in virtue, adventure, and the beauty of the natural world.',
     cta: 'Discover Toys',
-    image: 'Wooden toy set — handcrafted blocks, animals, figurines',
+    image: '/assets/toys.webp',
+    imageAlt: 'Handcrafted wooden Noah\'s Ark with animal figurines on linen cloth',
     reverse: true,
   },
 ]
@@ -73,10 +74,11 @@ export function ProductsShowcase() {
                 className="flex-1"
               >
                 <div className="vintage-frame overflow-hidden rounded-2xl">
-                  <PlaceholderImage
-                    label={product.image}
-                    className="rounded-none"
-                    aspectRatio="aspect-[4/3]"
+                  <img
+                    src={product.image}
+                    alt={product.imageAlt}
+                    className="aspect-[4/3] w-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </FadeIn>

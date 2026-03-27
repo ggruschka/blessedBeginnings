@@ -1,7 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { ParallaxSection } from '@/components/animations/ParallaxSection'
-import { PlaceholderImage } from '@/components/PlaceholderImage'
 
 export function CTASection() {
   return (
@@ -9,10 +8,11 @@ export function CTASection() {
       {/* Background illustration */}
       <div className="absolute inset-0 z-0">
         <ParallaxSection offset={60} speed={0.15} className="h-full">
-          <PlaceholderImage
-            label="Watercolor — children praying in garden"
-            className="h-full w-full rounded-none bg-primary/[0.05] opacity-30"
-            aspectRatio=""
+          <img
+            src="/assets/children-praying.webp"
+            alt="Two children kneeling in prayer among wildflowers"
+            className="h-full w-full object-cover opacity-30"
+            loading="lazy"
           />
         </ParallaxSection>
       </div>

@@ -26,9 +26,13 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between">
         {/* Logo */}
         <a href="#" className="relative z-10 flex items-center gap-2.5">
-          <div className="vintage-frame-strong flex h-11 w-11 items-center justify-center rounded-full">
-            <span className="font-heading text-lg italic text-foreground">B</span>
-          </div>
+          <img
+            src="/assets/logo-48.png"
+            alt="Blessed Beginnings"
+            width={44}
+            height={44}
+            className="h-11 w-11 object-contain"
+          />
           <span className="hidden font-heading text-lg italic text-foreground sm:inline">
             Blessed Beginnings
           </span>

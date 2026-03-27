@@ -1,3 +1,4 @@
+import { Divider } from '@/components/Divider'
 import { Navbar } from '@/components/sections/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { PromiseBar } from '@/components/sections/PromiseBar'
@@ -19,9 +20,13 @@ export default function App() {
       <main>
         <Hero />
         <PromiseBar />
+        <Divider />
         <OurStory />
+        <Divider />
         <ProductsShowcase />
+        <Divider />
         <ValueGrid />
+        <Divider />
         <Testimonials />
         <CTASection />
       </main>
