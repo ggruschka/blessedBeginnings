@@ -1,0 +1,38 @@
+const footerLinks = [
+  { label: 'Shop', href: '#products' },
+  { label: 'Our Story', href: '#story' },
+  { label: 'Our Faith', href: '#story' },
+  { label: 'Contact', href: '#' },
+]
+
+export function Footer() {
+  return (
+    <footer className="border-t border-foreground/[0.06] py-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
+        <div className="flex items-center gap-3">
+          <div className="vintage-frame flex h-8 w-8 items-center justify-center rounded-full">
+            <span className="font-heading text-sm italic text-foreground">B</span>
+          </div>
+          <p className="font-body text-xs font-light text-foreground/40">
+            &copy; 2026 Blessed Beginnings. All rights reserved.
+          </p>
+        </div>
+
+        <nav>
+          <ul className="flex items-center gap-6">
+            {footerLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="font-body text-xs font-light text-foreground/40 transition-colors hover:text-foreground/70"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  )
+}
