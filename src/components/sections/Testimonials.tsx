@@ -1,5 +1,5 @@
 import { FadeIn } from '@/components/animations/FadeIn'
-import { StaggerContainer, StaggerItem } from '@/components/animations/StaggerContainer'
+import { ScrollLinked } from '@/components/animations/ScrollLinked'
 import { SectionBadge } from '@/components/SectionBadge'
 
 const testimonials = [
@@ -25,7 +25,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="relative bg-surface-warm py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <FadeIn>
@@ -38,13 +38,15 @@ export function Testimonials() {
           </FadeIn>
         </div>
 
-        <StaggerContainer
-          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          staggerDelay={0.15}
-        >
-          {testimonials.map((t) => (
-            <StaggerItem key={t.name}>
-              <div className="vintage-frame flex h-full flex-col rounded-2xl p-8">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <ScrollLinked
+              key={t.name}
+              opacityRange={[0, 1]}
+              scaleRange={[0.95, 1]}
+              yRange={[30 + i * 15, 0]}
+            >
+              <div className="vintage-frame flex h-full flex-col rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1">
                 <div className="mb-4 font-heading text-4xl italic text-primary/30">
                   &ldquo;
                 </div>
@@ -60,9 +62,9 @@ export function Testimonials() {
                   </p>
                 </div>
               </div>
-            </StaggerItem>
+            </ScrollLinked>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   )

@@ -1,4 +1,3 @@
-import { Divider } from '@/components/Divider'
 import { Navbar } from '@/components/sections/Navbar'
 import { Hero } from '@/components/sections/Hero'
 import { PromiseBar } from '@/components/sections/PromiseBar'
@@ -11,7 +10,7 @@ import { Footer } from '@/components/sections/Footer'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
+    <div className="relative min-h-screen bg-background">
       {/* Paper texture overlay */}
       <div className="paper-texture" />
 
@@ -20,13 +19,9 @@ export default function App() {
       <main>
         <Hero />
         <PromiseBar />
-        <Divider />
         <OurStory />
-        <Divider />
         <ProductsShowcase />
-        <Divider />
         <ValueGrid />
-        <Divider />
         <Testimonials />
         <CTASection />
       </main>

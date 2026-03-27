@@ -23,6 +23,12 @@
     --input: 30 10% 15% / 0.12;
     --ring: 35 60% 45%;
     --radius: 9999px;
+
+    /* Surface variants for section differentiation */
+    --surface-ivory: 38 30% 98%;
+    --surface-warm: 36 22% 93%;
+    --surface-deep: 28 18% 22%;
+    --surface-deep-fg: 35 25% 92%;
   }
 
   * {
@@ -36,6 +42,7 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     margin: 0;
+    overflow-x: clip;
   }
 }
 

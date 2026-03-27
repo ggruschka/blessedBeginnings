@@ -1,20 +1,47 @@
+import { useRef } from 'react'
+import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { ParallaxSection } from '@/components/animations/ParallaxSection'
+import { WoodSurface } from '@/components/WoodSurface'
 
 export function CTASection() {
+  const sectionRef = useRef(null)
+  const prefersReducedMotion = useReducedMotion()
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+
+  const bgScale = useTransform(scrollYProgress, [0, 0.5], [1.05, 1.15])
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [0.1, 0.35])
+  const animated = !prefersReducedMotion
+
   return (
-    <section id="cta" className="relative py-32 sm:py-40">
-      {/* Background illustration */}
-      <div className="absolute inset-0 z-0">
-        <ParallaxSection offset={60} speed={0.15} className="h-full">
-          <img
-            src="/assets/children-praying.webp"
-            alt="Two children kneeling in prayer among wildflowers"
-            className="h-full w-full object-cover opacity-30"
-            loading="lazy"
-          />
-        </ParallaxSection>
+    <section ref={sectionRef} id="cta" className="relative py-32 sm:py-40">
+      {/* Background illustration — breathes into view */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {animated ? (
+          <motion.div className="h-full w-full" style={{ scale: bgScale }}>
+            <motion.img
+              src="/assets/children-praying.webp"
+              alt="Two children kneeling in prayer among wildflowers"
+              className="h-full w-full object-cover"
+              style={{ opacity: bgOpacity }}
+              loading="lazy"
+            />
+          </motion.div>
+        ) : (
+          <ParallaxSection offset={60} speed={0.15} className="h-full">
+            <img
+              src="/assets/children-praying.webp"
+              alt="Two children kneeling in prayer among wildflowers"
+              className="h-full w-full object-cover opacity-30"
+              loading="lazy"
+            />
+          </ParallaxSection>
+        )}
       </div>
 
       {/* Fades */}
@@ -38,13 +65,14 @@ export function CTASection() {
 
         <FadeIn delay={0.3}>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <WoodSurface
+              as="a"
               href="#"
-              className="vintage-frame-strong flex items-center gap-2 rounded-full px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-transform hover:scale-[1.02]"
+              className="flex items-center gap-2 rounded-full px-8 py-3.5 font-body text-sm font-semibold text-foreground transition-transform hover:scale-[1.02]"
             >
               Explore the Collection
               <ArrowUpRight className="h-4 w-4 text-primary" />
-            </a>
+            </WoodSurface>
             <a
               href="#story"
               className="rounded-full bg-primary/10 px-8 py-3.5 font-body text-sm font-medium text-foreground/70 transition-colors hover:bg-primary/15 hover:text-foreground"

@@ -45,6 +45,12 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        surface: {
+          ivory: 'hsl(var(--surface-ivory))',
+          warm: 'hsl(var(--surface-warm))',
+          deep: 'hsl(var(--surface-deep))',
+          'deep-fg': 'hsl(var(--surface-deep-fg))',
+        },
       },
     },
   },
