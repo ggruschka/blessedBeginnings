@@ -67,8 +67,8 @@ export function Navbar() {
       <motion.header
         className="fixed left-0 right-0 top-4 z-50 px-4"
         animate={scrolled ? {
-          backgroundColor: 'rgba(255, 248, 235, 0.6)',
-          backdropFilter: 'blur(12px)',
+          backgroundColor: 'rgba(255, 248, 235, 0.1)',
+          backdropFilter: 'blur(2px)',
           boxShadow: '0 4px 30px rgba(139, 69, 19, 0.06)',
           borderColor: 'rgba(255, 255, 255, 0.25)',
         } : {
