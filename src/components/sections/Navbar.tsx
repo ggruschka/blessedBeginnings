@@ -67,13 +67,13 @@ export function Navbar() {
       <motion.header
         className="fixed left-0 right-0 top-4 z-50 px-4"
         animate={scrolled ? {
-          backgroundColor: 'rgba(255, 248, 235, 0.4)',
-          backdropFilter: 'blur(20px) saturate(180%) brightness(108%)',
-          boxShadow: '0 4px 30px rgba(139, 69, 19, 0.06), inset 0 1px 0 rgba(255,255,255,0.3)',
+          backgroundColor: 'rgba(255, 248, 235, 0.6)',
+          backdropFilter: 'blur(12px)',
+          boxShadow: '0 4px 30px rgba(139, 69, 19, 0.06)',
           borderColor: 'rgba(255, 255, 255, 0.25)',
         } : {
           backgroundColor: 'rgba(255, 248, 235, 0)',
-          backdropFilter: 'blur(0px) saturate(100%) brightness(100%)',
+          backdropFilter: 'blur(0px)',
           boxShadow: '0 0px 0px rgba(139, 69, 19, 0)',
           borderColor: 'rgba(255, 255, 255, 0)',
         }}

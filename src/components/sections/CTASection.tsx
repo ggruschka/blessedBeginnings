@@ -1,54 +1,25 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
-import { ParallaxSection } from '@/components/animations/ParallaxSection'
 import { WoodSurface } from '@/components/WoodSurface'
 
 export function CTASection() {
-  const sectionRef = useRef(null)
-  const prefersReducedMotion = useReducedMotion()
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const bgScale = useTransform(scrollYProgress, [0, 0.5], [1.05, 1.15])
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.4], [0.25, 0.55])
-  const animated = !prefersReducedMotion
-
   return (
-    <section ref={sectionRef} id="cta" className="relative flex min-h-screen snap-start items-center py-32 sm:py-40">
-      {/* Background illustration — breathes into view */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {animated ? (
-          <motion.div className="h-full w-full" style={{ scale: bgScale }}>
-            <motion.img
-              src="/assets/children-praying.webp"
-              alt="Two children kneeling in prayer among wildflowers"
-              className="h-full w-full object-cover"
-              style={{ opacity: bgOpacity }}
-              loading="lazy"
-            />
-          </motion.div>
-        ) : (
-          <ParallaxSection offset={60} speed={0.15} className="h-full">
-            <img
-              src="/assets/children-praying.webp"
-              alt="Two children kneeling in prayer among wildflowers"
-              className="h-full w-full object-cover opacity-50"
-              loading="lazy"
-            />
-          </ParallaxSection>
-        )}
+    <section id="cta" className="relative flex min-h-screen snap-start items-center py-32 sm:py-40">
+      {/* Background illustration */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/assets/children-praying.webp"
+          alt=""
+          className="h-full w-full object-cover opacity-50"
+          loading="lazy"
+        />
       </div>
 
       {/* Edge fades */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-background to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-t from-background to-transparent" />
 
-      {/* Content — frosted backdrop for readability */}
+      {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
         <FadeIn>
           <h2 className="text-contrast-strong font-heading text-4xl italic leading-[0.9] tracking-tight text-foreground sm:text-5xl lg:text-6xl">

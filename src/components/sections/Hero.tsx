@@ -1,42 +1,14 @@
-import { useRef } from 'react'
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useReducedMotion,
-} from 'motion/react'
+import { motion } from 'motion/react'
 import { ArrowUpRight, Play, ChevronDown } from 'lucide-react'
 import { BlurText } from '@/components/animations/BlurText'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { WoodSurface } from '@/components/WoodSurface'
 
 export function Hero() {
-  const sectionRef = useRef(null)
-  const prefersReducedMotion = useReducedMotion()
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  })
-
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -60])
-  const contentScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9])
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
-  const scrollIndicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0])
-
-  const animated = !prefersReducedMotion
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex min-h-screen snap-start flex-col overflow-hidden"
-    >
-      {/* Background video — zooms in on scroll */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={animated ? { scale: videoScale } : undefined}
-      >
+    <section className="relative flex min-h-screen snap-start flex-col overflow-hidden">
+      {/* Background video */}
+      <div className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
@@ -44,23 +16,17 @@ export function Hero() {
           playsInline
           className="h-full w-full object-cover opacity-55"
         >
-          <source src="/assets/hero-animation.mp4" type="video/mp4" />
+          <source src="/assets/hero-bg.webm" type="video/webm" />
+          <source src="/assets/hero-bg.mp4" type="video/mp4" />
         </video>
-      </motion.div>
+      </div>
 
-      {/* Light vignette — keeps edges readable, center open */}
+      {/* Vignette overlays */}
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background/50 via-transparent to-background" />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(35_20%_96%/0.6)_100%)]" />
 
       {/* Content */}
-      <motion.div
-        className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center px-6 pt-40 text-center sm:pt-48 lg:pt-56"
-        style={
-          animated
-            ? { opacity: contentOpacity, y: contentY, scale: contentScale }
-            : undefined
-        }
-      >
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center px-6 pt-40 text-center sm:pt-48 lg:pt-56">
         <FadeIn delay={0.1}>
           <p className="text-contrast font-body text-sm font-medium tracking-[0.15em] text-foreground/50 uppercase">
             Rooted in Faith, Made for Childhood
@@ -106,18 +72,15 @@ export function Hero() {
         </motion.div>
 
         {/* Scroll indicator */}
-        <motion.div
-          className="mt-auto pb-10 pt-20"
-          style={animated ? { opacity: scrollIndicatorOpacity } : undefined}
-        >
+        <div className="mt-auto pb-10 pt-20">
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <ChevronDown className="h-5 w-5 text-foreground/25" />
           </motion.div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Bottom gradient */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] h-72 bg-gradient-to-b from-transparent to-background" />

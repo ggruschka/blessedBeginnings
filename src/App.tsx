@@ -11,9 +11,6 @@ import { Footer } from '@/components/sections/Footer'
 export default function App() {
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Paper texture overlay */}
-      <div className="paper-texture" />
-
       <Navbar />
 
       <main>
