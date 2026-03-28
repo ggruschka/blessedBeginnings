@@ -148,7 +148,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   html {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
 }
 
