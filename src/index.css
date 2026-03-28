@@ -37,7 +37,6 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
   }
 
   body {
@@ -143,8 +142,26 @@
   }
 }
 
-/* Paper texture removed for performance — SVG filter overlay
-   composited every frame was causing FPS drops */
+/* ========================================
+   Desktop-only scroll snap
+   ======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* ========================================
+   Safe viewport height (accounts for mobile browser chrome)
+   ======================================== */
+
+@layer utilities {
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
 
 /* ========================================
    Reduced Motion

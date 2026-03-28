@@ -5,7 +5,7 @@ import { WoodSurface } from '@/components/WoodSurface'
 
 export function OurStory() {
   return (
-    <section id="story" className="relative flex min-h-screen snap-start items-center bg-surface-warm py-24 sm:py-32">
+    <section id="story" className="relative flex min-h-screen-safe snap-start items-center bg-surface-warm py-24 sm:py-32">
       {/* Background illustration */}
       <div className="absolute inset-0 z-0">
         <img

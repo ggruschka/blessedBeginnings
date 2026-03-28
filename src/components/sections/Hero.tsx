@@ -6,7 +6,7 @@ import { WoodSurface } from '@/components/WoodSurface'
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen snap-start flex-col overflow-hidden">
+    <section className="relative flex min-h-screen-safe snap-start flex-col overflow-hidden">
       {/* Background video */}
       <div className="absolute inset-0 z-0">
         <video

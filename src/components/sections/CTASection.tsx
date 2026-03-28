@@ -4,7 +4,7 @@ import { WoodSurface } from '@/components/WoodSurface'
 
 export function CTASection() {
   return (
-    <section id="cta" className="relative flex min-h-screen snap-start items-center py-32 sm:py-40">
+    <section id="cta" className="relative flex min-h-screen-safe snap-start items-center py-32 sm:py-40">
       {/* Background illustration */}
       <div className="absolute inset-0 z-0">
         <img
