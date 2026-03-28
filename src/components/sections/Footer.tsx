@@ -7,7 +7,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-foreground/[0.06] py-12">
+    <footer className="bg-surface-deep py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
         <div className="flex items-center gap-3">
           <img
@@ -15,9 +15,9 @@ export function Footer() {
             alt="Blessed Beginnings"
             width={32}
             height={32}
-            className="h-8 w-8 object-contain"
+            className="h-8 w-8 object-contain brightness-[1.8]"
           />
-          <p className="font-body text-xs font-light text-foreground/40">
+          <p className="font-body text-xs font-light text-surface-deep-fg/40">
             &copy; 2026 Blessed Beginnings. All rights reserved.
           </p>
         </div>
@@ -28,7 +28,7 @@ export function Footer() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="font-body text-xs font-light text-foreground/40 transition-colors hover:text-foreground/70"
+                  className="font-body text-xs font-light text-surface-deep-fg/40 transition-colors hover:text-surface-deep-fg/70"
                 >
                   {link.label}
                 </a>

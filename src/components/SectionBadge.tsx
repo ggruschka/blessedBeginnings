@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { WoodSurface } from '@/components/WoodSurface'
 
 interface SectionBadgeProps {
   children: React.ReactNode
@@ -7,13 +8,14 @@ interface SectionBadgeProps {
 
 export function SectionBadge({ children, className }: SectionBadgeProps) {
   return (
-    <span
+    <WoodSurface
+      as="span"
       className={cn(
-        'vintage-frame inline-block rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide text-foreground/80',
+        'inline-block rounded-full px-4 py-1.5 font-body text-xs font-medium tracking-wide text-foreground/80',
         className
       )}
     >
       {children}
-    </span>
+    </WoodSurface>
   )
 }

@@ -1,4 +1,4 @@
-import { type ReactNode, useRef, useEffect, useState } from 'react'
+import { type ReactNode, useRef } from 'react'
 import {
   motion,
   useScroll,
@@ -6,6 +6,7 @@ import {
   useReducedMotion,
 } from 'motion/react'
 import { cn } from '@/lib/utils'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 interface ParallaxSectionProps {
   children: ReactNode
@@ -21,7 +22,7 @@ export function ParallaxSection({
   speed = 0.3,
 }: ParallaxSectionProps) {
   const ref = useRef(null)
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useIsMobile()
   const prefersReducedMotion = useReducedMotion()
 
   const { scrollYProgress } = useScroll({
@@ -30,13 +31,6 @@ export function ParallaxSection({
   })
 
   const y = useTransform(scrollYProgress, [0, 1], [offset * speed, -offset * speed])
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
-  }, [])
 
   const disabled = isMobile || prefersReducedMotion
 

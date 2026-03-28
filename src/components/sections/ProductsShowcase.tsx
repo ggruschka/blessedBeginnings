@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SectionBadge } from '@/components/SectionBadge'
+import { WoodSurface } from '@/components/WoodSurface'
 
 const products = [
   {
@@ -38,7 +39,7 @@ export function ProductsShowcase() {
           </FadeIn>
         </div>
 
-        <div className="mt-20 space-y-24 lg:space-y-32">
+        <div className="mt-14 space-y-28 lg:space-y-36">
           {products.map((product, i) => (
             <div
               key={product.title}
@@ -46,7 +47,6 @@ export function ProductsShowcase() {
                 product.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
               }`}
             >
-              {/* Text */}
               <FadeIn
                 direction={product.reverse ? 'right' : 'left'}
                 delay={0.1}
@@ -58,16 +58,16 @@ export function ProductsShowcase() {
                 <p className="mt-5 max-w-lg font-body text-base font-light leading-relaxed text-foreground/60">
                   {product.description}
                 </p>
-                <a
+                <WoodSurface
+                  as="a"
                   href="#cta"
-                  className="vintage-frame-strong mt-8 inline-flex items-center gap-2 rounded-full px-6 py-2.5 font-body text-sm font-semibold text-foreground transition-transform hover:scale-[1.02]"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-2.5 font-body text-sm font-semibold text-foreground transition-transform hover:scale-[1.02]"
                 >
                   {product.cta}
                   <ArrowUpRight className="h-3.5 w-3.5 text-primary" />
-                </a>
+                </WoodSurface>
               </FadeIn>
 
-              {/* Image */}
               <FadeIn
                 direction={product.reverse ? 'left' : 'right'}
                 delay={i * 0.1 + 0.2}
@@ -78,7 +78,7 @@ export function ProductsShowcase() {
                     src={product.image}
                     alt={product.imageAlt}
                     className="aspect-[4/3] w-full object-cover"
-                    loading="lazy"
+                    loading={i > 0 ? 'lazy' : undefined}
                   />
                 </div>
               </FadeIn>

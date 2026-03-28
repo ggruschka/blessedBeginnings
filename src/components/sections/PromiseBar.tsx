@@ -5,7 +5,7 @@ const values = ['Faith', 'Virtue', 'Family', 'Boyhood', 'Girlhood']
 
 export function PromiseBar() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="relative bg-surface-ivory py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-6 text-center">
         <FadeIn>
           <SectionBadge>Built on Timeless Truths</SectionBadge>

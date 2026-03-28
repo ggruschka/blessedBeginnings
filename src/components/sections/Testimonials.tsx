@@ -25,7 +25,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="relative bg-surface-warm py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <FadeIn>
@@ -44,7 +44,7 @@ export function Testimonials() {
         >
           {testimonials.map((t) => (
             <StaggerItem key={t.name}>
-              <div className="vintage-frame flex h-full flex-col rounded-2xl p-8">
+              <div className="vintage-frame flex h-full flex-col rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1">
                 <div className="mb-4 font-heading text-4xl italic text-primary/30">
                   &ldquo;
                 </div>

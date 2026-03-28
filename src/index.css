@@ -23,6 +23,12 @@
     --input: 30 10% 15% / 0.12;
     --ring: 35 60% 45%;
     --radius: 9999px;
+
+    /* Surface variants for section differentiation */
+    --surface-ivory: 38 30% 98%;
+    --surface-warm: 36 22% 93%;
+    --surface-deep: 28 18% 22%;
+    --surface-deep-fg: 35 25% 92%;
   }
 
   * {
@@ -36,6 +42,7 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     margin: 0;
+    overflow-x: clip;
   }
 }
 
@@ -120,18 +127,40 @@
 }
 
 /* ========================================
-   Paper Texture Overlay
+   Text contrast on image backgrounds
    ======================================== */
 
-.paper-texture {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.03;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-repeat: repeat;
+@layer utilities {
+  .text-contrast {
+    text-shadow: 0 0 24px hsla(35, 20%, 96%, 0.9);
+  }
+
+  .text-contrast-strong {
+    text-shadow:
+      0 0 20px hsla(35, 20%, 96%, 1),
+      0 0 40px hsla(35, 20%, 96%, 0.6);
+  }
+}
+
+/* ========================================
+   Desktop-only scroll snap
+   ======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* ========================================
+   Safe viewport height (accounts for mobile browser chrome)
+   ======================================== */
+
+@layer utilities {
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 }
 
 /* ========================================
