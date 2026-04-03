@@ -14,6 +14,8 @@ export function Hero() {
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/assets/children-praying.webp"
           className="h-full w-full object-cover"
           style={{ opacity: 0.65 }}
         >

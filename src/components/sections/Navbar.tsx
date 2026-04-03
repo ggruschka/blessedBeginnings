@@ -5,6 +5,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'motion/react'
+import { FocusScope } from '@radix-ui/react-focus-scope'
 import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { woodStyle, WoodGrainOverlay } from '@/components/WoodSurface'
@@ -170,6 +171,7 @@ export function Navbar() {
             role="dialog"
             aria-modal="true"
           >
+            <FocusScope trapped loop>
             <div className="flex flex-1 flex-col justify-center px-10">
               <ul className="flex flex-col gap-2">
                 {navLinks.map((link, i) => (
@@ -214,6 +216,7 @@ export function Navbar() {
                 </a>
               </motion.div>
             </div>
+            </FocusScope>
           </motion.div>
         )}
       </AnimatePresence>
