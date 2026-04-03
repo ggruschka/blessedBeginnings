@@ -17,7 +17,7 @@ export function Footer() {
             height={32}
             className="h-8 w-8 object-contain brightness-[1.8]"
           />
-          <p className="font-body text-xs font-light text-surface-deep-fg/40">
+          <p className="font-body text-xs font-light text-surface-deep-fg/60">
             &copy; 2026 Blessed Beginnings. All rights reserved.
           </p>
         </div>
@@ -28,7 +28,7 @@ export function Footer() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="font-body text-xs font-light text-surface-deep-fg/40 transition-colors hover:text-surface-deep-fg/70"
+                  className="font-body text-xs font-light text-surface-deep-fg/60 transition-colors hover:text-surface-deep-fg/80"
                 >
                   {link.label}
                 </a>

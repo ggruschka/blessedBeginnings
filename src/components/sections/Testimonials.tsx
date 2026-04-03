@@ -48,14 +48,14 @@ export function Testimonials() {
                 <div className="mb-4 font-heading text-4xl italic text-primary/30">
                   &ldquo;
                 </div>
-                <blockquote className="flex-1 font-body text-sm font-light italic leading-relaxed text-foreground/70">
+                <blockquote className="flex-1 font-body text-sm font-light italic leading-relaxed text-foreground/75">
                   {t.quote}
                 </blockquote>
                 <div className="mt-6 border-t border-foreground/10 pt-5">
                   <p className="font-body text-sm font-medium text-foreground">
                     {t.name}
                   </p>
-                  <p className="mt-0.5 font-body text-xs font-light text-foreground/45">
+                  <p className="mt-0.5 font-body text-xs font-light text-foreground/70">
                     {t.role}
                   </p>
                 </div>

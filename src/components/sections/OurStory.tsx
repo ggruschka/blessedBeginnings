@@ -54,7 +54,7 @@ export function OurStory() {
         {/* Body + CTA — anchored at bottom */}
         <div className="pb-16 sm:pb-24">
           <FadeIn delay={0.2}>
-            <p className="text-contrast mx-auto max-w-2xl font-body text-base font-light leading-relaxed text-foreground/65 sm:text-lg">
+            <p className="text-contrast mx-auto max-w-2xl font-body text-base font-light leading-relaxed text-foreground/75 sm:text-lg">
               Every book, toy, workbook, and garment is lovingly created to form
               young hearts in traditional Catholic teaching while celebrating the
               beautiful differences between boys and girls. We believe childhood

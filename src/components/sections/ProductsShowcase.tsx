@@ -55,7 +55,7 @@ export function ProductsShowcase() {
                 <h3 className="font-heading text-3xl italic leading-[0.9] tracking-tight text-foreground sm:text-4xl">
                   {product.title}
                 </h3>
-                <p className="mt-5 max-w-lg font-body text-base font-light leading-relaxed text-foreground/60">
+                <p className="mt-5 max-w-lg font-body text-base font-light leading-relaxed text-foreground/75">
                   {product.description}
                 </p>
                 <WoodSurface

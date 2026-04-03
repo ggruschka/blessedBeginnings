@@ -51,7 +51,7 @@ export function Hero() {
         {/* Heading group — centered in viewport */}
         <div className="flex flex-1 flex-col items-center justify-center">
           <FadeIn delay={0.1}>
-            <p className="text-contrast font-body text-sm font-medium tracking-[0.15em] text-foreground/60 uppercase">
+            <p className="text-contrast font-body text-sm font-medium tracking-[0.15em] text-foreground/75 uppercase">
               Rooted in Faith, Made for Childhood
             </p>
           </FadeIn>
@@ -66,7 +66,7 @@ export function Hero() {
         {/* Body + CTA — anchored at bottom */}
         <div className="pb-16 sm:pb-24">
           <FadeIn delay={0.8}>
-            <p className="text-contrast mx-auto max-w-2xl font-body text-base font-light leading-relaxed text-foreground/65 sm:text-lg">
+            <p className="text-contrast mx-auto max-w-2xl font-body text-base font-light leading-relaxed text-foreground/75 sm:text-lg">
               Beautiful storybooks with traditional Catholic morals. Heirloom
               toys. Wholesome activity workbooks. Modest clothing that celebrates
               the beauty of childhood. All crafted with love for faithful
@@ -90,7 +90,7 @@ export function Hero() {
             </WoodSurface>
             <a
               href="#story"
-              className="text-contrast flex items-center gap-2 rounded-full px-7 py-3 font-body text-sm font-medium text-foreground/50 transition-colors hover:text-foreground"
+              className="text-contrast flex items-center gap-2 rounded-full px-7 py-3 font-body text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
             >
               <Play className="h-3.5 w-3.5 fill-current" />
               Our Story

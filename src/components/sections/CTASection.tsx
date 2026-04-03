@@ -39,7 +39,7 @@ export function CTASection() {
         {/* Body + CTA — anchored at bottom */}
         <div className="pb-16 sm:pb-24">
           <FadeIn delay={0.15}>
-            <p className="text-contrast mx-auto max-w-xl font-body text-base font-light leading-relaxed text-foreground/65 sm:text-lg">
+            <p className="text-contrast mx-auto max-w-xl font-body text-base font-light leading-relaxed text-foreground/75 sm:text-lg">
               Give your children the gift of tradition, faith, and beauty.
               Every treasure is crafted to last a lifetime.
             </p>
@@ -57,7 +57,7 @@ export function CTASection() {
               </WoodSurface>
               <a
                 href="#story"
-                className="text-contrast rounded-full bg-primary/10 px-8 py-3.5 font-body text-sm font-medium text-foreground/70 transition-colors hover:bg-primary/15 hover:text-foreground"
+                className="text-contrast rounded-full bg-primary/10 px-8 py-3.5 font-body text-sm font-medium text-foreground/75 transition-colors hover:bg-primary/15 hover:text-foreground"
               >
                 Learn About Our Faith
               </a>

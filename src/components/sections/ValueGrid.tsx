@@ -61,7 +61,7 @@ export function ValueGrid() {
                 <h3 className="font-heading text-xl italic text-surface-deep-fg">
                   {value.title}
                 </h3>
-                <p className="mt-3 font-body text-sm font-light leading-relaxed text-surface-deep-fg/55">
+                <p className="mt-3 font-body text-sm font-light leading-relaxed text-surface-deep-fg/65">
                   {value.description}
                 </p>
               </div>
